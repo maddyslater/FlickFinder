@@ -13,12 +13,12 @@ const fetchStreaming = async (movieID) => {
       const show = await client.showsApi.getShow(
         {id:tmdbID, output_language: 'en', country: "us"}
       );
-      const services = show.streamingOptions["us"];
-      if (show.streamingOptions && Object.keys(show.streamingOptions).length > 0) {
-        show.streamingOptions["us"].forEach((streamingOption) => {
+      let { us } = show.streamingOptions;
+      if (us && Object.keys(us).length > 0) {
+        us.forEach((streamingOption) => {
             console.log(streamingOption.link);
         });
-        return services;
+        return us;
 
     } else {
         const services = [];
