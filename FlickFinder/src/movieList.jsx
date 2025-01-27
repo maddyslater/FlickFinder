@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
+import StreamingButton from './StreamingButton'
 
-
-const movieList = ({ movies}) => {
+const MovieList = ({ movies }) => {
 
     return (
         <div>
@@ -11,10 +11,11 @@ const movieList = ({ movies}) => {
                     <h3>{movie.title}</h3>
                     <p>{movie.overview}</p>
                     <p><strong>Release Date:</strong> {movie.release_date}</p>
+                    <StreamingButton movieID={movie.id}/>
                 </div>
             ))}
         </div>
     );
 };
 
-export default movieList;
+export default MovieList;

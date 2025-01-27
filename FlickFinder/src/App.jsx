@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import fetchMovies from './services/tmdb-api.jsx';
 // import GenreSelect from './GenreSelect.jsx';
-import movieRecommendations from './movieRecommendations.jsx';
-import movieList from './movieList.jsx';
-import genreList from './genreList.jsx';
+import MovieRecommendationForm from './MovieRecommendationForm.jsx';
+import MovieList from './MovieList.jsx';
+import GenreList from './GenreList.jsx';
 
 function App() {
   const [genre, setGenre] = useState('');
@@ -38,15 +38,15 @@ function App() {
     <>
       <div className="App">
             <h1>Welcome To Flick Finder!</h1>
-          <movieRecommendations
+          <MovieRecommendationForm
                 onSubmit={handleSubmit}
                 genre={genre}
                 keywords={keywords}
                 onGenreChange={handleGenreChange}
                 onKeywordChange={handleKeywordChange}
-                genreList={genreList}
+                genreList={GenreList}
           />
-          <movieList movies={movies}/>
+          <MovieList movies={movies}/>
           {/* <form onSubmit={handleSubmit}>
             <label htmlFor="genre">Select Genre:</label>
             <GenreSelect genre={genre} onGenreChange={handleGenreChange} genreData={genreList} />
@@ -60,6 +60,8 @@ function App() {
             <button type="submit">Get Recommendations</button>
         </form> */}
         </div>
+
+        
     </>
   )
 }

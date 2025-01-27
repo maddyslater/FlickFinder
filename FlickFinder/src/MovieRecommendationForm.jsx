@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import GenreSelect from './GenreSelect'
 
-const movieRecommendations = ({
+const MovieRecommendationForm = ({
     onSubmit,
     genre,
     keywords,
     onGenreChange,
     onKeywordChange,
     genreList
-}) => {
+    }) => {
     return (
         <form onSubmit={onSubmit}>
             <label htmlFor="genre">Select Genre:</label>
@@ -25,5 +25,5 @@ const movieRecommendations = ({
     );
 };
 
-export default movieRecommendations;
+export default MovieRecommendationForm;
 

@@ -1,4 +1,4 @@
-const genreList = [
+const GenreList = [
     { id: 28, name: "Action" },
     { id: 12, name: "Adventure" },
     { id: 16, name: "Animation" },
@@ -20,4 +20,4 @@ const genreList = [
     { id: 37, name: "Western" }
 ];
 
-export default genreList;
+export default GenreList;
