@@ -27,6 +27,7 @@ const fetchMovies = async (genre, keywords) => {
     const movies = response.data.results;
     movies.forEach((movie) => {
       console.log(`Title: ${movie.title}, Release Date: ${movie.release_date}`);
+      console.log(movie);
     });
     return movies;
   }

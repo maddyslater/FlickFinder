@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import GenreSelect from './GenreSelect'
 import { useState } from 'react';
+// import { useNavigate, Link } from 'react-router';
 
 const MovieRecommendationForm = ({ onSubmit }) => {
   const [genre, setGenre] = useState('');
   const [keywords, setKeywords] = useState('');
+//   const navigate = useNavigate();
 
   const handleGenreChange = (event) => {
     setGenre(event.target.value);
@@ -17,20 +19,27 @@ const MovieRecommendationForm = ({ onSubmit }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit(genre, keywords);
+    // navigate('/movieList');
   };
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="genre">Select Genre:</label>
-            <GenreSelect genre={genre} onGenreChange={handleGenreChange} />
-              <label htmlFor="keywords">Keywords:</label>
-              <input
-                  type="text"
-                  value={keywords}
-                  onChange={handleKeywordChange}
-                  placeholder="Enter keywords"
-              />
-            <button type="submit">Get Recommendations</button>
-        </form>
+        <div id="movieRecForm">
+            <h1 className="logo" >Flick Finder</h1>
+            <h2 className="subtitle">A search engine for those who simply cannot choose</h2>
+            <form id="searchBar" onSubmit={handleSubmit}>
+                {/* <label>Genre:</label> */}
+                <GenreSelect onGenreChange={handleGenreChange} />
+                {/* <label>Keywords:</label> */}
+                <input
+                    className="searchInput"
+                    type="text"
+                    value={keywords}
+                    onChange={handleKeywordChange}
+                    placeholder="Enter keywords"
+                />
+                <button className="button-48" id="searchButton" type="submit"><span className="text">Search</span></button>
+                {/* <Link to="/movieList" className="submit-button" onClick={() => handleSubmit }>Get Recommendations</Link> */}
+            </form>
+        </div>
     );
 };
 

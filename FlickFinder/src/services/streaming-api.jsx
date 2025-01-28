@@ -16,7 +16,8 @@ const fetchStreaming = async (movieID) => {
       let { us } = show.streamingOptions;
       if (us && Object.keys(us).length > 0) {
         us.forEach((streamingOption) => {
-            console.log(streamingOption.link);
+            // console.log(streamingOption.link);
+            console.log(streamingOption.service.imageSet.lightThemeImage);
         });
         return us;
 
